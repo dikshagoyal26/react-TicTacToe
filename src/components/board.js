@@ -94,35 +94,36 @@ class Board extends React.Component {
       <div>
         <h1>Tic Tac Toe</h1>
         <div className="game">
-        <h4>
-          Player {this.state.player} turn : {this.state.xorzero}
-        </h4>
-        <table>
-          <tbody>
-            <tr>
-              <td>{this.renderSquare(0)}</td>
-              <td>{this.renderSquare(1)}</td>
-              <td>{this.renderSquare(2)}</td>
-            </tr>
-            <tr>
-              <td>{this.renderSquare(3)}</td>
-              <td>{this.renderSquare(4)}</td>
-              <td>{this.renderSquare(5)}</td>
-            </tr>
-            <tr>
-              <td>{this.renderSquare(6)}</td>
-              <td>{this.renderSquare(7)}</td>
-              <td>{this.renderSquare(8)}</td>
-            </tr>
-          </tbody>
-        </table>
+          <div className="gameboard">
+            <h4>
+              Player {this.state.player} turn : {this.state.xorzero}
+            </h4>
+            <table>
+              <tbody>
+                <tr>
+                  <td>{this.renderSquare(0)}</td>
+                  <td>{this.renderSquare(1)}</td>
+                  <td>{this.renderSquare(2)}</td>
+                </tr>
+                <tr>
+                  <td>{this.renderSquare(3)}</td>
+                  <td>{this.renderSquare(4)}</td>
+                  <td>{this.renderSquare(5)}</td>
+                </tr>
+                <tr>
+                  <td>{this.renderSquare(6)}</td>
+                  <td>{this.renderSquare(7)}</td>
+                  <td>{this.renderSquare(8)}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="board">
+            <LeaderBoard player1={this.state.wins1} player2={this.state.wins2} ></LeaderBoard>
 
+          </div>
         </div>
         {/* <button onClick={() => this.reload()}>Reload</button> */}
-      <div className="board">
-      <LeaderBoard player1={this.state.wins1} player2={this.state.wins2} ></LeaderBoard>
-
-      </div>
 
       </div>
     );
