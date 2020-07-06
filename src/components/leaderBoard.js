@@ -5,7 +5,7 @@ class LeaderBoard extends React.Component {
         return (
             <div>
                 <p>Player {i} : {w1}</p>
-                <p>Player {i == 1 ? 2 : 1} : {w2}</p>
+                <p>Player {i === 1 ? 2 : 1} : {w2}</p>
             </div>
         )
     }

@@ -12,30 +12,27 @@ class Board extends React.Component {
     player1: "",
     player2: ""
   };
-  constructor(props) {
-    super(props);
-  }
   names() {
     var player1 = prompt('Enter name for player 1')
     var player2 = prompt('Enter name for player 2')
     this.setState({ player1: player1, player2: player2 })
   }
   handleClick(i, val) {
-    if (this.state.squares[i] == null) {
+    if (this.state.squares[i] === null) {
       let a = this.state.squares.slice();
       a[i] = this.state.xorzero;
       this.setState({ squares: a });
 
       this.isGameOver(a);
-      const ch = this.state.xorzero == "X" ? "O" : "X";
+      const ch = this.state.xorzero === "X" ? "O" : "X";
       this.setState({ xorzero: ch });
-      let p = this.state.player == 1 ? 2 : 1;
+      let p = this.state.player === 1 ? 2 : 1;
       this.setState({ player: p });
     }
   }
   isSameRow(one, two, three) {
     if (one && two && three) {
-      if (one == two && one == three) {
+      if (one === two && one === three) {
         return true;
       }
     }
@@ -52,7 +49,7 @@ class Board extends React.Component {
       this.isSameRow(arr[6], arr[7], arr[8])
     ) {
       alert(`Player ${this.state.player} wins the game`);
-      if (this.state.player == 1) {
+      if (this.state.player === 1) {
         this.setState({ wins1: this.state.wins1 + 1 });
       } else {
         this.setState({ wins2: this.state.wins2 + 1 });
